@@ -1,0 +1,71 @@
+HELPER FUNCTIONS
+================
+
+void sortAscending(int *arr, int size): // use bubblesort
+  int maxIndex  // store index of max element
+  int max       // store value of max element
+  For size > i >= 0
+    maxIndex = 0
+    max = 0
+    For 0 <= j <= i
+      If element j in arr > max
+        maxIndex = j
+        max = element j
+      EndIf
+    EndFor
+    Swap element maxIndex with element i
+  EndFor
+
+
+double average(int *arr, int size):
+  int sum = 0; // accumulator
+  For 0 <= i < size
+    sum = sum + element i of arr
+  EndFor
+  double avg = double(sum) / size
+  Return avg
+
+
+int getValidInput(int minValue, string prompt, string errMsg):
+  Print prompt
+  While true
+    If input is less than minValue
+      Print errMsg
+    EndIf
+    Else
+      return input
+    EndElse
+  EndWhile
+
+
+void printArr(int *arr, int size):
+  For 0 <= i < size
+    Print arr element i + "  "
+  EndFor
+
+
+MAIN FUNCTION
+=============
+
+main:
+int numScores   // store number of test scores
+Create a pointer to int called arr (for dynamic array)
+
+Ask user for number of test scores
+numScores = getValidInput(1, "Enter number of tests: ",
+                          "There must be at least 1 test")
+arr = new array of size numScores
+
+Loop i from 0 to numScores - 1
+  Element i = getValidInput(0, "Enter test score: ", "Test score
+                             must be non-negative")
+End Loop
+
+sortAscending(arr, numScores)
+
+int avg = average(arr, numScores)
+
+Print "Test scores in ascending order: "
+printArr(arr, numScores)
+
+Print "Average score: " + avg
