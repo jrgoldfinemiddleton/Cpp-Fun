@@ -1,7 +1,7 @@
 HELPER FUNCTIONS
 ================
 
-void sortAscending(int *arr, int size): // use bubblesort
+void sortAscending(int *arr, int size): // use section sort
   int maxIndex  // store index of max element
   int max       // store value of max element
   For size > i >= 0
