@@ -55,6 +55,7 @@ int main() {
     delete [] dynArr[i];
   }
   delete [] dynArr;
+  dynArr = NULL;
 
   return 0;
 }

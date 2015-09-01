@@ -78,6 +78,7 @@ int main() {
 
   // free allocated heap memory from array to prevent memleak
   delete [] testScores;
+  testScores = NULL;
 
   return 0;
 }
